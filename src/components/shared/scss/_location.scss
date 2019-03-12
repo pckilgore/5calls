@@ -1,0 +1,41 @@
+#locationMessage {
+  margin-bottom: 0.5rem;
+}
+.location {
+  @include bp(medium) {
+    border-top: 0.25rem solid $red;
+  }
+  padding: 12px 6px;
+
+  .input-group {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+
+  p {
+    margin: 0;
+    font-size: 19px;
+    // padding: 12px 6px 6px 6px;
+
+    &.loadingAnimation {
+      color: $gray;
+      margin-bottom: 0.5rem;
+    }
+  }
+  input {
+    width: 200px;
+  }
+
+  .help {
+    font-size: 14px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}

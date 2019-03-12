@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "outDir": "build/dist",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "public",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "config",
+    "e2e-tests",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "web-tests",
+    "__mocks__",
+    "karma.ci.conf.js",
+    "karma.conf.js",
+    "runner.js",
+    "gulpfile.js"
+  ],
+  "types": ["typePatches"]
+}

@@ -1,0 +1,80 @@
+footer {
+  margin-top: 1.5rem;
+  background-color: $gray-light;
+  text-align: center;
+  font-size: $font-small;
+  padding: 2rem 0;
+  .colophon {
+    width: 100%;
+    position: relative;
+    padding: 6px 0 24px 0;
+    line-height: 2em;
+
+    ul {
+      width: 150px;
+      list-style: none;
+      padding: 0;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      -webkit-padding-start: 0;
+
+      @include max-width-bp(medium) {
+        width: inherit;
+      }
+    }
+
+    a {
+      span {
+        margin-left: 5px;
+      }
+    }
+
+    p {
+      a {
+        padding: 0;
+        text-decoration: underline;
+      }
+    }
+
+    &__left {
+      float: left;
+
+      @include max-width-bp(medium) {
+        float: none;
+      }
+
+      li {
+        text-align: left;
+
+        @include max-width-bp(medium) {
+          text-align: center;
+        }
+      }
+    }
+
+    &__right {
+      float: right;
+
+      @include max-width-bp(medium) {
+        float: none;
+      }
+
+      li {
+        text-align: right;
+
+        @include max-width-bp(medium) {
+          text-align: center;
+        }
+      }
+    }
+
+    &__center {
+      margin: 10px auto;
+
+      p {
+        font-size: 16px;
+        line-height: 1em;
+      }
+    }
+  }
+}

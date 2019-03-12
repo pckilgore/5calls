@@ -1,0 +1,496 @@
+.layout {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1256px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include max-width-bp(medium) {
+    // some safaris have trouble with this flex switch and both boxes are displayed over top one another
+    // for debugging another day, inline rather than flex resolves the issue
+
+    display: inline;
+    // flex-direction: column;
+  }
+}
+
+.layout__side {
+  flex: 1;
+  margin: 30px 30px 2rem 0;
+  min-width: 300px;
+  max-width: 350px;
+
+  @include max-width-bp(medium) {
+    max-width: inherit;
+    margin: 0;
+  }
+}
+
+.layout__main {
+  flex: 2;
+  margin: 1.4rem 24px 24px 6px;
+  max-width: 830px;
+
+  @include max-width-bp(medium) {
+    margin: 0 24px 24px;
+  }
+
+  section.loading {
+    margin: 20px 20px;
+    padding: 14px 25px;
+    background-color: $grey;
+    border-radius: 15px;
+    color: #000;
+
+    h2 {
+      margin: 0 0 4px 0;
+      font-size: 22px;
+
+      a {
+        color: $blue;
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.donate-btn {
+  margin-right: 1rem;
+  @include bp(small) {
+    margin-right: 1.5rem;
+  }
+  @include bp(medium) {
+    margin-right: 2.5rem;
+  }
+}
+
+.logo__header {
+  border-top: 0.3rem solid $blue;
+  box-shadow: 0 2px 12px 0px rgba(0, 0, 0, 0.13);
+  @include bp(medium) {
+    margin-bottom: 1rem;
+  }
+
+  & > .layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .stars {
+    width: 2rem;
+    display: none;
+    @include bp(small) {
+      display: block;
+    }
+  }
+
+  position: relative;
+
+  @include max-width-bp(medium) {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    margin: 5px 0 0 0;
+
+    li {
+      float: left;
+      margin-right: 40px;
+
+      @include max-width-bp(medium) {
+        margin-right: 20px;
+      }
+
+      a {
+        font-size: 20px;
+        font-weight: 600;
+        color: $blue;
+
+        &.active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .logo__img {
+    width: 90px;
+    @include bp(small) {
+      width: 110px;
+    }
+  }
+
+  .userHeader {
+    position: relative;
+    float: right;
+
+    p {
+      float: right;
+      margin: 8px 0 0 0;
+
+      height: 20px;
+      max-width: 120px;
+      overflow: hidden;
+
+      line-height: 1em;
+      text-align: right;
+
+      a {
+        color: $blue;
+        &:hover {
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__menu {
+      // display: none;
+      position: absolute;
+      top: 33px;
+      right: 0;
+      width: 150px;
+      padding: 4px 0;
+      background-color: #fff;
+      border-radius: 3px;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+      ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        width: 100%;
+        margin: 0;
+        padding: 4px 10px;
+        text-align: right;
+
+        a {
+          font-size: 15px;
+          font-weight: normal;
+        }
+      }
+      li.line {
+        width: 100%;
+        height: 1px;
+        margin: 3px 0;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .stars {
+      float: right;
+      margin-left: 6px;
+
+      width: 33px;
+      height: 33px;
+      border-radius: 17px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.callcount {
+  clear: both;
+  font-size: $font-xlarge;
+  font-weight: bold;
+  text-transform: uppercase;
+  @include max-width-bp(small) {
+    font-size: $font-large;
+  }
+}
+
+.promote {
+  p {
+    font-size: $font-large;
+    text-align: center;
+  }
+  a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 12px 12px 20px;
+  }
+}
+
+.extras {
+  &__title {
+    margin: 24px auto 48px auto;
+    max-width: 700px;
+
+    font-size: 32px;
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+  }
+
+  &__band {
+    width: 100%;
+    clear: both;
+    background-color: $blue;
+    padding: 26px 0 30px 0;
+  }
+
+  ul {
+    width: 100%;
+    margin: 0;
+    -webkit-padding-start: 0px;
+  }
+
+  li {
+    list-style: none;
+    width: 33%;
+    float: left;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+
+    @include max-width-bp(medium) {
+      float: none;
+      width: inherit;
+    }
+
+    .img-contain {
+      height: 70px;
+    }
+  }
+
+  .explainer {
+    &__pick img {
+      width: 250px;
+      height: 69px;
+      margin-top: 7px;
+    }
+
+    &__call img {
+      width: 250px;
+      height: 85px;
+    }
+
+    &__result img {
+      width: 290px;
+      height: 71px;
+      margin-top: 7px;
+    }
+  }
+
+  .articles {
+    li {
+      width: 25%;
+
+      @include max-width-bp(medium) {
+        width: inherit;
+      }
+    }
+    li img {
+      width: 260px;
+      height: 80px;
+    }
+  }
+
+  &__tweets {
+    margin: 80px 0;
+    ul {
+      li {
+        text-align: left;
+        padding: 0 30px;
+        @include max-width-bp(medium) {
+          margin: 30px 0;
+        }
+
+        img {
+          float: left;
+          width: 42px;
+          height: 42px;
+        }
+
+        p {
+          margin-left: 48px;
+          margin-bottom: 5px;
+          color: $blue;
+
+          font-style: italic;
+          font-weight: 100;
+          line-height: 1.2em;
+        }
+
+        .user {
+          font-style: normal;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__media {
+    margin: 80px 0;
+    // text-align: center;
+
+    ul {
+      // width: 800px;
+      margin: 0 auto;
+      li {
+        width: 33%;
+        // margin: 0 10px;
+        @include max-width-bp(medium) {
+          width: inherit;
+          margin: 20px 0;
+        }
+
+        img {
+          width: 250px;
+        }
+      }
+    }
+  }
+}
+
+.extraDisclaimer {
+  text-align: center;
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.progress {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+  margin: 0 20px 10px 0;
+  background-color: white;
+  font-family: $font-headings;
+
+  p.totaltext {
+    z-index: 3;
+    position: absolute;
+    margin: 1px 8px;
+
+    font-size: $font-large;
+    color: #fff;
+  }
+
+  &__total {
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    min-width: 10%;
+    height: 20px;
+    background-color: $blue;
+
+    color: white;
+    text-align: right;
+    padding-right: 5px;
+    line-height: 21px;
+    border-radius: 5px;
+  }
+
+  &__border {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    background-color: $blue-light;
+    border-radius: 5px;
+  }
+
+  &__goal {
+    z-index: 3;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    text-align: right;
+    height: 20px;
+    padding-right: 5px;
+    line-height: 21px;
+    color: #fff;
+
+    @include max-width-bp(medium) {
+      display: none;
+    }
+  }
+}
+
+.progress__large {
+  height: 40px;
+
+  .progress__total {
+    height: 40px;
+    // line-height: 26px;
+  }
+
+  .progress__border {
+    height: 40px;
+  }
+
+  .progress__goal {
+    font-size: $font-large;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+.postcards {
+  &__example {
+    float: left;
+    width: 320px;
+    margin: -20px 20px 10px 0;
+
+    @include max-width-bp(medium) {
+      float: none;
+      width: 100%;
+      margin: 10px;
+    }
+  }
+
+  h1 {
+    font-size: 50px;
+    text-transform: none;
+  }
+
+  h2 {
+    clear: both;
+    font-size: 32px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    li {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  }
+
+  blockquote {
+    background-color: #ddd;
+    border-radius: 4px;
+    padding: 10px 14px;
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+}
